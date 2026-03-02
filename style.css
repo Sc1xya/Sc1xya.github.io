@@ -1,5 +1,5 @@
 :root {
-    --bg: #4f7cff;
+    --bg: #162975;
     --card: rgba(255, 255, 255, 0.06);
     --text: rgba(255, 255, 255, 0.92);
     --muted: rgba(255, 255, 255, 0.72);
@@ -97,12 +97,24 @@ nav {
     background: rgba(255, 255, 255, 0.02);
     font-size: 14px;
     color: var(--text);
-    transition: transform 120ms ease, background 160ms ease, border-color 160ms ease;
+
+    /* 加一点平滑过渡 */
+    transition: 
+        transform 120ms ease,
+        background 160ms ease,
+        border-color 160ms ease,
+        box-shadow 200ms ease;
 }
+
 .pill:hover {
-    transform: translateY(-1px);
-    background: rgba(255, 255, 255, 0.04);
-    border-color: rgba(255,255,255,0.28);
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(79, 124, 255, 0.6);
+
+    /* 蓝色发光 */
+    box-shadow: 
+        0 0 12px rgba(79, 124, 255, 0.4),
+        0 0 24px rgba(79, 124, 255, 0.25);
 }
 
 main {
