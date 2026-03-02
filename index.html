@@ -1,15 +1,68 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Sc1xya's Universe</title>
-    </head>
-    <body style="background-color: black;">
-        <h1 style="color: white;
-        text-align: center;
-        font-family: Verdana">Welcome to Sc1xya's Universe</h2>
-        <h2 style="color: white;">Hello, my dear friend.</p>
-        <hr/>
-        <a href="./test.html" style="color: white;">Tap here!</a>
-    </body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sc1xya's Universe</title>
+
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            background: #000;
+            color: #fff;
+            font-family: -apple-system, BlinkMacSystemFont,
+                         "SF Pro Display", "Helvetica Neue",
+                         sans-serif;
+        }
+
+        /* 整个页面垂直居中 */
+        .container {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-left: 12%;
+        }
+
+        h1 {
+            font-size: 48px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin: 0;
+        }
+
+        .divider {
+            width: 408px;
+            height: 3px;
+            background: #fff;
+            margin: 20px 0;
+            opacity: 0.7;
+        }
+
+        .enter {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: 400;
+            opacity: 0.7;
+            text-decoration: none;
+            color: #fff;
+            transition: opacity 0.2s ease;
+        }
+
+        .enter:hover {
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Sc1xya's Universe</h1>
+        <div class="divider"></div>
+        <a class="enter" href="./test.html">
+            Enter
+        </a>
+    </div>
+</body>
 </html>
