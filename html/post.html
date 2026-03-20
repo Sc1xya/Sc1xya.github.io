@@ -58,11 +58,12 @@
         loadPost();
 
         document.addEventListener("copy", function(e) {
-            const selection = window.getSelection().toString();
+            const selection = window.getSelection().toString().trim();
 
-            if (!selection) return;
+            // 少于10个字符就不加
+            if (!selection || selection.length < 10) return;
 
-            const extra = `\n\n—— 来自 Sc1xya's Universe\n${window.location.href}`;
+            const extra = "\n\n—— 来自 Sc1xya's Universe\nhttps://sc1xya.github.io";
 
             e.clipboardData.setData("text/plain", selection + extra);
             e.preventDefault();
