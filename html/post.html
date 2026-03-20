@@ -56,6 +56,17 @@
         }
 
         loadPost();
+
+        document.addEventListener("copy", function(e) {
+            const selection = window.getSelection().toString();
+
+            if (!selection) return;
+
+            const extra = `\n\n—— 来自 Sc1xya's Universe\n${window.location.href}`;
+
+            e.clipboardData.setData("text/plain", selection + extra);
+            e.preventDefault();
+        });
     </script>
 </body>
 </html>
