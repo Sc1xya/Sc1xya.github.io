@@ -43,10 +43,9 @@
                 const html = marked.parse(markdown);
                 contentEl.innerHTML = html;
 
-                // 自动用文章第一个 h1 作为网页标题
-                const firstTitle = contentEl.querySelector("h1");
-                if (firstTitle) {
-                    document.title = `${firstTitle.textContent} — Sc1xya`;
+                const titleEl = contentEl.querySelector("h1, h2, h3");
+                if (titleEl) {
+                    document.title = `${titleEl.textContent} — Sc1xya`;
                 }
             } catch (error) {
                 contentEl.innerHTML = `
