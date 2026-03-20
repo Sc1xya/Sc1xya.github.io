@@ -8,89 +8,55 @@
 </head>
 
 <body>
-    <!-- 左上角 -->
     <div class="site-title">
         <h1><a href="../index.html">Sc1xya</a></h1>
         <div class="line"></div>
     </div>
 
-    <!-- 文章内容 -->
     <div class="container">
-        <div class="post-date" id="post-date"></div>
-        <h1 class="post-title" id="post-title"></h1>
-        <div class="post-content" id="post-content"></div>
-
+        <div class="markdown-body" id="content"></div>
         <a class="back-link" href="./posts_black.html">← Back to Posts</a>
     </div>
 
+    <!-- Markdown 解析库 -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
     <script>
-        const posts = {
-            "night-thoughts": {
-                date: "2026.03.02",
-                title: "Night Thoughts",
-                content: [
-                    "The night is always a little different from the daytime. Everything becomes quieter, softer, and somehow more honest.",
-                    "I often feel that words written at night are closer to the truth. They are not polished. They are not trying too hard. They simply exist.",
-                    "Perhaps that is why I like the night so much. It does not ask me to explain myself."
-                ]
-            },
-
-            "feb-summary": {
-                date: "2026.02.28",
-                title: "February Summary",
-                content: [
-                    "February passed more quickly than I expected. I bought a bicycle, assembled it, and began to imagine the roads I might ride in spring.",
-                    "There were also many small moments — thoughts before sleep, fragments of emotion, and the strange feeling that life was slowly becoming more solid.",
-                    "I do not think this month changed everything. But it moved something inside me, quietly."
-                ]
-            },
-
-            "friendship": {
-                date: "2026.02.20",
-                title: "On Friendship",
-                content: [
-                    "Friendship, to me, is never about constant noise. It is more like knowing that somewhere in the world, there is a person who would understand a certain silence in you.",
-                    "Some friendships stay close. Some drift apart. But there are still traces left in the way we speak, think, and remember.",
-                    "Maybe that is enough. Maybe being remembered gently is already a beautiful thing."
-                ]
-            },
-
-            "火树银花": {
-                date: "2026.3.20",
-                title: "火树银花",
-                content: [
-                    "火树银花"
-                ]
-            }
-        };
-
-        // 读取 URL 参数 ?id=xxx
         const params = new URLSearchParams(window.location.search);
         const id = params.get("id");
 
-        const post = posts[id];
+        const contentEl = document.getElementById("content");
 
-        const dateEl = document.getElementById("post-date");
-        const titleEl = document.getElementById("post-title");
-        const contentEl = document.getElementById("post-content");
+        async function loadPost() {
+            if (!id) {
+                contentEl.innerHTML = '<p class="error">No post id provided.</p>';
+                return;
+            }
 
-        if (post) {
-            document.title = post.title + " — Sc1xya";
-            dateEl.textContent = post.date;
-            titleEl.textContent = post.title;
+            try {
+                const response = await fetch(`./posts/${id}.md`);
+                if (!response.ok) {
+                    throw new Error("Post not found");
+                }
 
-            contentEl.innerHTML = post.content
-                .map(paragraph => `<p>${paragraph}</p>`)
-                .join("");
-        } else {
-            document.title = "Post Not Found — Sc1xya";
-            dateEl.textContent = "";
-            titleEl.textContent = "Post Not Found";
-            contentEl.innerHTML = `
-                <p>The article you are looking for does not exist.</p>
-                <p>Please return to the posts page and choose another one.</p>
-            `;
+                const markdown = await response.text();
+                const html = marked.parse(markdown);
+                contentEl.innerHTML = html;
+
+                // 自动用文章第一个 h1 作为网页标题
+                const firstTitle = contentEl.querySelector("h1");
+                if (firstTitle) {
+                    document.title = `${firstTitle.textContent} — Sc1xya`;
+                }
+            } catch (error) {
+                contentEl.innerHTML = `
+                    <p class="error">This post could not be loaded.</p>
+                    <p class="error">Please check whether the markdown file exists.</p>
+                `;
+            }
         }
+
+        loadPost();
     </script>
 </body>
 </html>
