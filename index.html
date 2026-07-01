@@ -1,19 +1,67 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sc1xya's Universe</title>
+    <link rel="icon" href="./html/pics/daisy.png" />
     <link rel="stylesheet" href="./css/index.css" />
 </head>
 
 <body>
-    <div class="container">
-        <h1>Sc1xya's Universe</h1>
-        <div class="divider"></div>
-        <a class="enter" href="./html/posts_black.html">
-            Enter
-        </a>
-    </div>
+    <header class="site-nav">
+        <a class="brand" href="./index.html">Sc1xya</a>
+        <nav aria-label="Primary navigation">
+            <a href="./html/posts_black.html">Posts</a>
+            <a href="https://github.com/Sc1xya" target="_blank" rel="noreferrer">GitHub</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero" aria-labelledby="hero-title">
+            <p class="eyebrow">Sc1xya's Universe</p>
+            <h1 id="hero-title">A quiet place for words.</h1>
+            <p class="intro">写作，记忆，和一些慢慢留下来的东西。</p>
+            <div class="actions">
+                <a class="primary-link" href="./html/posts_black.html">Read posts</a>
+                <a class="secondary-link" href="./html/post_black.html?id=%E7%81%AB%E6%A0%91%E9%93%B6%E8%8A%B1">Latest</a>
+            </div>
+            <figure class="hero-visual">
+                <img src="./html/pics/daisy.png" alt="A small daisy in soft light" />
+            </figure>
+        </section>
+
+        <section class="latest" aria-labelledby="latest-title">
+            <div class="section-heading">
+                <p class="eyebrow">Latest writing</p>
+                <h2 id="latest-title">Recently collected.</h2>
+            </div>
+
+            <div class="post-grid">
+                <a class="post-card feature" href="./html/post_black.html?id=%E5%A6%82">
+                    <span class="post-date">2026.03.22</span>
+                    <strong>如</strong>
+                    <span>一篇短而轻的文字，像把一句话放在掌心里看。</span>
+                </a>
+
+                <a class="post-card" href="./html/post_black.html?id=%E7%81%AB%E6%A0%91%E9%93%B6%E8%8A%B1">
+                    <span class="post-date">2026.03.20</span>
+                    <strong>火树银花</strong>
+                    <span>关于离别、葬礼和另一种火光的记忆。</span>
+                </a>
+
+                <a class="post-card" href="./html/post_black.html?id=%E4%B8%80%E5%B0%81%E6%B0%B8%E8%BF%9C%E4%B9%9F%E4%B8%8D%E4%BC%9A%E5%8F%91%E5%87%BA%E7%9A%84%E4%BF%A1">
+                    <span class="post-date">2025.08.04</span>
+                    <strong>一封永远也不会发出的信</strong>
+                    <span>写给某个不会收到的人，也写给某个还没放下的自己。</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <span>Copyright © 2026 Sc1xya.</span>
+        <a href="./html/posts_black.html">All posts</a>
+    </footer>
 </body>
 </html>

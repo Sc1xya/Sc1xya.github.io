@@ -1,30 +1,32 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Post — Sc1xya</title>
+    <link rel="icon" href="./pics/daisy.png" />
     <link rel="stylesheet" href="../css/post.css" />
 </head>
 
 <body>
-    <div class="site-title">
-        <h1><a href="../index.html">Sc1xya</a></h1>
-        <div class="line"></div>
-    </div>
+    <header class="site-nav">
+        <a class="brand" href="../index.html">Sc1xya</a>
+        <nav aria-label="Primary navigation">
+            <a href="../index.html">Home</a>
+            <a href="./posts_black.html">Posts</a>
+        </nav>
+    </header>
 
-    <div class="container">
-        <div class="markdown-body" id="content"></div>
-        <a class="back-link" href="./posts_black.html">← Back to Posts</a>
-    </div>
+    <main class="reading-shell">
+        <article class="markdown-body" id="content"></article>
+        <a class="back-link" href="./posts_black.html">Back to posts</a>
+    </main>
 
-    <!-- Markdown 解析库 -->
     <script src="../js/marked.min.js"></script>
 
     <script>
         const params = new URLSearchParams(window.location.search);
         const id = params.get("id");
-
         const contentEl = document.getElementById("content");
 
         async function loadPost() {
@@ -49,8 +51,7 @@
                 }
 
                 const markdown = await response.text();
-                const html = marked.parse(markdown);
-                contentEl.innerHTML = html;
+                contentEl.innerHTML = marked.parse(markdown);
 
                 const titleEl = contentEl.querySelector("h1, h2, h3");
                 if (titleEl) {
@@ -68,12 +69,9 @@
 
         document.addEventListener("copy", function(e) {
             const selection = window.getSelection().toString().trim();
-
-            // 少于10个字符就不加
             if (!selection || selection.length < 10) return;
 
             const extra = "\n\n—— 来自 Sc1xya's Universe\nhttps://sc1xya.github.io/";
-
             e.clipboardData.setData("text/plain", selection + extra);
             e.preventDefault();
         });

@@ -4,39 +4,58 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Posts — Sc1xya</title>
+    <link rel="icon" href="./pics/daisy.png" />
     <link rel="stylesheet" href="../css/posts_black.css" />
 </head>
 
 <body>
-    <!-- 左上角固定标识 -->
-    <header class="site-title">
-        <h1><a href="../index.html">Sc1xya</a></h1>
-        <div class="line"></div>
+    <header class="site-nav">
+        <a class="brand" href="../index.html">Sc1xya</a>
+        <nav aria-label="Primary navigation">
+            <a href="../index.html">Home</a>
+            <a aria-current="page" href="./posts_black.html">Posts</a>
+        </nav>
     </header>
 
-    <!-- 内容区 -->
-    <main class="container">
-        <h2>Posts</h2>
+    <main>
+        <section class="page-hero" aria-labelledby="posts-title">
+            <p class="eyebrow">Writing</p>
+            <h1 id="posts-title">All posts.</h1>
+            <p>像 Apple 官网的产品索引一样，把文章安静地摆在这里。</p>
+        </section>
 
-        <ul class="post-list">
-            <li class="post-item">
-                <span class="date">2025.08.04</span>
-                <a href="./post_black.html?id=%E4%B8%80%E5%B0%81%E6%B0%B8%E8%BF%9C%E4%B9%9F%E4%B8%8D%E4%BC%9A%E5%8F%91%E5%87%BA%E7%9A%84%E4%BF%A1">一封永远也不会发出的信</a>
-            </li>
+        <section class="post-section" aria-label="Post list">
+            <ul class="post-list">
+                <li class="post-item">
+                    <a href="./post_black.html?id=%E5%A6%82">
+                        <span class="date">2026.03.22</span>
+                        <strong>如</strong>
+                        <span>一篇短而轻的文字。</span>
+                    </a>
+                </li>
 
-            <li class="post-item">
-                <span class="date">2026.03.20</span>
-                <a href="./post_black.html?id=%E7%81%AB%E6%A0%91%E9%93%B6%E8%8A%B1">火树银花</a>
-            </li>
+                <li class="post-item">
+                    <a href="./post_black.html?id=%E7%81%AB%E6%A0%91%E9%93%B6%E8%8A%B1">
+                        <span class="date">2026.03.20</span>
+                        <strong>火树银花</strong>
+                        <span>关于离别、葬礼和另一种火光。</span>
+                    </a>
+                </li>
 
-            <li class="post-item">
-                <span class="date">2026.03.22</span>
-                <a href="./post_black.html?id=%E5%A6%82">如</a>
-            </li>
-
-        </ul>
-
-        <a class="style-notes" href="./style_optimization.html">View style optimization notes →</a>
+                <li class="post-item">
+                    <a href="./post_black.html?id=%E4%B8%80%E5%B0%81%E6%B0%B8%E8%BF%9C%E4%B9%9F%E4%B8%8D%E4%BC%9A%E5%8F%91%E5%87%BA%E7%9A%84%E4%BF%A1">
+                        <span class="date">2025.08.04</span>
+                        <strong>一封永远也不会发出的信</strong>
+                        <span>写给不会收到的人。</span>
+                    </a>
+                </li>
+            </ul>
+        </section>
     </main>
+
+    <footer class="site-footer">
+        <span>Copyright © 2026 Sc1xya.</span>
+        <a href="../index.html">Back home</a>
+    </footer>
 </body>
 </html>
