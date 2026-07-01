@@ -38,7 +38,7 @@
             if (window.location.protocol === "file:") {
                 contentEl.innerHTML = `
                     <p class="error">This post cannot be loaded from a local file path.</p>
-                    <p class="error">Please open the site through GitHub Pages or a local static server.</p>
+                    <p class="error">Please open the site through a published URL or a local static server.</p>
                 `;
                 return;
             }
@@ -71,7 +71,7 @@
             const selection = window.getSelection().toString().trim();
             if (!selection || selection.length < 10) return;
 
-            const extra = "\n\n—— 来自 Sc1xya's Universe\nhttps://sc1xya.github.io/";
+            const extra = "\n\n—— 来自 Sc1xya's Universe";
             e.clipboardData.setData("text/plain", selection + extra);
             e.preventDefault();
         });
