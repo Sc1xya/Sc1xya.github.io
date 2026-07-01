@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-labelledby="title desc">
+  <title id="title">Landing page visual optimization</title>
+  <desc id="desc">A dark landing page mockup showing gradient atmosphere, responsive title and accent enter link.</desc>
+  <defs>
+    <radialGradient id="gold" cx="18%" cy="22%" r="55%"><stop offset="0" stop-color="#c6a86b" stop-opacity=".35"/><stop offset="1" stop-color="#c6a86b" stop-opacity="0"/></radialGradient>
+    <radialGradient id="blue" cx="82%" cy="78%" r="55%"><stop offset="0" stop-color="#7087ba" stop-opacity=".24"/><stop offset="1" stop-color="#7087ba" stop-opacity="0"/></radialGradient>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#08090d"/><stop offset=".55" stop-color="#11131a"/><stop offset="1" stop-color="#07080b"/></linearGradient>
+    <linearGradient id="line" x1="0" x2="1"><stop stop-color="#c6a86b"/><stop offset=".62" stop-color="#f2f0ea" stop-opacity=".22"/><stop offset="1" stop-color="#f2f0ea" stop-opacity="0"/></linearGradient>
+  </defs>
+  <rect width="960" height="540" fill="url(#bg)"/>
+  <rect width="960" height="540" fill="url(#gold)"/>
+  <rect width="960" height="540" fill="url(#blue)"/>
+  <rect x="32" y="32" width="896" height="476" rx="30" fill="none" stroke="#f2f0ea" stroke-opacity=".12"/>
+  <text x="118" y="188" fill="#f2f0ea" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="74" font-weight="760" letter-spacing="-5">Sc1xya's</text>
+  <text x="118" y="270" fill="#f2f0ea" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="74" font-weight="760" letter-spacing="-5">Universe</text>
+  <rect x="118" y="306" width="468" height="2" fill="url(#line)"/>
+  <text x="118" y="360" fill="#f2f0ea" fill-opacity=".78" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="20" font-weight="700" letter-spacing="6">ENTER</text>
+  <text x="215" y="360" fill="#c6a86b" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="22" font-weight="700">→</text>
+  <g fill="#c6a86b" fill-opacity=".9" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="18" font-weight="700">
+    <text x="612" y="150">Gradient mood</text>
+    <text x="612" y="212">Responsive title</text>
+    <text x="612" y="274">Accent navigation</text>
+  </g>
+  <g stroke="#c6a86b" stroke-width="2" stroke-opacity=".65" fill="none">
+    <path d="M598 146 C525 112 432 102 310 140"/>
+    <path d="M598 207 C500 208 430 215 338 226"/>
+    <path d="M598 269 C492 296 372 326 236 348"/>
+  </g>
+</svg>
