@@ -73,11 +73,10 @@ a {
 }
 
 .hero {
-    min-height: calc(100vh - 44px);
     display: grid;
     align-content: start;
     justify-items: center;
-    padding: clamp(58px, 8vw, 92px) 24px 44px;
+    padding: clamp(58px, 8vw, 92px) 24px 24px;
     text-align: center;
 }
 
@@ -163,7 +162,7 @@ a {
 .latest {
     display: grid;
     gap: 28px;
-    padding: 64px max(18px, calc((100vw - 1180px) / 2)) 80px;
+    padding: 40px max(18px, calc((100vw - 1180px) / 2)) 80px;
 }
 
 .section-heading {
